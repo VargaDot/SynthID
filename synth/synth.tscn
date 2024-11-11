@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://synth/synth.gd" id="1_lq5ca"]
 
-[node name="Synth" type="Node2D"]
+[node name="Synth" type="Node"]
 script = ExtResource("1_lq5ca")
