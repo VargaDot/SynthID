@@ -21,6 +21,7 @@ func _generate() -> void:
 	_interpret_info()
 
 func _interpret_info():
+	print("---------------------------")
 	if synth.is_male:
 		print("Male")
 		if synth.facial_hair: print("Has facial hair")
@@ -42,16 +43,24 @@ func _interpret_info():
 	print("Height: " + str(synth.height))
 	print("Shoe size: " + str(synth.shoe_size))
 	
+	var build:String
+	match synth.build:
+		0: build = "Thin"
+		1: build = "Average"
+		2: build = "Big"
+	print("Build: " + build)
+	
 	var blood_type:String
 	match synth.blood_type:
-		0: "O+"
-		1: "O-"
-		2: "A+"
-		3: "A-"
-		4: "B+"
-		5: "B-"
-		6: "AB+"
-		7: "AB-"
+		0: blood_type = "O+"
+		1: blood_type = "O-"
+		2: blood_type = "A+"
+		3: blood_type = "A-"
+		4: blood_type = "B+"
+		5: blood_type = "B-"
+		6: blood_type = "AB+"
+		7: blood_type = "AB-"
+	print("Blood type: " + blood_type)
 	
 	print("Handwriting: " + str(synth.hand_writing))
 	print ("Profile Complete")
