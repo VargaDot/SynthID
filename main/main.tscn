@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b41v6risaiyye"]
+[gd_scene load_steps=3 format=3 uid="uid://b41v6risaiyye"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_w382s"]
+[ext_resource type="PackedScene" uid="uid://xkjoxpbyniko" path="res://synthesizer/synthesizer.tscn" id="2_d18ga"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_w382s")
+
+[node name="Synthesizer" parent="." instance=ExtResource("2_d18ga")]
