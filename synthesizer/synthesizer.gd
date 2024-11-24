@@ -10,7 +10,7 @@ func _generate() -> void:
 	synth.glasses = choose_yes_or_no()
 	if synth.is_male: synth.facial_hair = choose_yes_or_no()
 	synth.has_long_hair = choose_yes_or_no()
-
+	
 	synth.voice_id = randi_range(0,99)
 	synth.eyes = randi_range(0,5)
 	synth.build = randi_range(0,2)
