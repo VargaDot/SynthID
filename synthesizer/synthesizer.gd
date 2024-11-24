@@ -3,6 +3,11 @@ extends Node
 @export var synth_blueprint:PackedScene
 var synth:Node
 var cabinet:Array[Synth]
+var name_list
+
+func _ready() -> void:
+	var name_file = FileAccess.open("res://name_list/name_list.json", FileAccess.READ)
+	name_list = JSON.parse_string(name_file.get_as_text())
 
 func _generate() -> void:
 	synth = synth_blueprint.instantiate()
@@ -11,6 +16,7 @@ func _generate() -> void:
 	synth.glasses = choose_yes_or_no()
 	if synth.is_male: synth.facial_hair = choose_yes_or_no()
 	synth.has_long_hair = choose_yes_or_no()
+	synth.synth_name = _create_synth_name()
 	
 	synth.voice_id = randi_range(0,99)
 	synth.eyes = randi_range(0,5)
@@ -28,8 +34,24 @@ func choose_yes_or_no() -> bool:
 	var x = randi_range(0,1)
 	return x
 
+func _create_synth_name() -> String:
+	var synth_name:String
+	var first_name:String
+	var last_name:String
+	var x:int
+	
+	x = randi_range(0, name_list.size() - 1)
+	first_name = name_list[x]
+	x = randi_range(0, name_list.size() - 1)
+	last_name = name_list[x]
+	
+	synth_name = first_name + " " + last_name
+	return synth_name
+
 func _interpret_info() -> void:
 	print("---------------------------")
+	print("Name: " + synth.synth_name)
+	
 	if synth.is_male:
 		print("Male")
 		if synth.facial_hair:
