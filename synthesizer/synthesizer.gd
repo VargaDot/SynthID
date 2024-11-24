@@ -16,7 +16,7 @@ func _generate() -> void:
 	synth.build = randi_range(0,2)
 	synth.hair_color = randi_range(0,8)
 	synth.height = randi_range(150,200) # this technically allocates a bigger portion of RAM
-	synth.shoe_size = randi_range(0,10)
+	synth.shoe_size = randi_range(35,48)
 	synth.blood_type = randi_range(0,7)
 	synth.hand_writing = randi_range(0,49)
 	
