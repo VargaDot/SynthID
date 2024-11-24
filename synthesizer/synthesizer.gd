@@ -2,6 +2,7 @@ extends Node
 
 @export var synth_blueprint:PackedScene
 var synth:Node
+var cabinet:Array[Synth]
 
 func _generate() -> void:
 	synth = synth_blueprint.instantiate()
@@ -20,6 +21,7 @@ func _generate() -> void:
 	synth.blood_type = randi_range(0,7)
 	synth.hand_writing = randi_range(0,49)
 	
+	cabinet.append(synth)
 	_interpret_info()
 
 func choose_yes_or_no() -> bool:
