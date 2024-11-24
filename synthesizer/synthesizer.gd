@@ -24,9 +24,12 @@ func _interpret_info():
 	print("---------------------------")
 	if synth.is_male:
 		print("Male")
-		if synth.facial_hair: print("Has facial hair")
-	else: print("Female")
-	if synth.glasses: print("Has Glasses")
+		if synth.facial_hair:
+			print("Has facial hair")
+	else:
+		print("Female")
+	if synth.glasses:
+		print("Has Glasses")
 	
 	print("Voice ID: " + str(synth.voice_id))
 	
