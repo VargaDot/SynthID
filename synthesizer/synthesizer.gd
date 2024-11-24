@@ -39,8 +39,6 @@ func _interpret_info() -> void:
 	if synth.glasses:
 		print("Has Glasses")
 	
-	print("Voice ID: " + str(synth.voice_id))
-	
 	var eye_color:String
 	match synth.eyes:
 		0: eye_color = "Blue"
@@ -71,9 +69,6 @@ func _interpret_info() -> void:
 		_: hair_color = "Undefined"
 	print("Hair Color: " + hair_color)
 	
-	print("Height: " + str(synth.height))
-	print("Shoe size: " + str(synth.shoe_size))
-	
 	var build:String
 	match synth.build:
 		0: build = "Thin"
@@ -81,6 +76,9 @@ func _interpret_info() -> void:
 		2: build = "Big"
 		_: build = "Undefined"
 	print("Build: " + build)
+	
+	print("Height: " + str(synth.height))
+	print("Shoe size: " + str(synth.shoe_size))
 	
 	var blood_type:String
 	match synth.blood_type:
@@ -96,4 +94,5 @@ func _interpret_info() -> void:
 	print("Blood type: " + blood_type)
 	
 	print("Handwriting: " + str(synth.hand_writing))
+	print("Voice ID: " + str(synth.voice_id))
 	print ("Profile Complete")
