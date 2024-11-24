@@ -38,6 +38,7 @@ func _interpret_info():
 		3: eye_color = "Gray"
 		4: eye_color = "Hazel"
 		5: eye_color = "Amber"
+		_: eye_color = "Undefined"
 	print("Eye color: " + eye_color)
 	
 	print("Height: " + str(synth.height))
@@ -48,6 +49,7 @@ func _interpret_info():
 		0: build = "Thin"
 		1: build = "Average"
 		2: build = "Big"
+		_: build = "Undefined"
 	print("Build: " + build)
 	
 	var blood_type:String
@@ -60,6 +62,7 @@ func _interpret_info():
 		5: blood_type = "B-"
 		6: blood_type = "AB+"
 		7: blood_type = "AB-"
+		_: blood_type = "Undefined"
 	print("Blood type: " + blood_type)
 	
 	print("Handwriting: " + str(synth.hand_writing))
