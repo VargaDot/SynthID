@@ -22,7 +22,11 @@ func _generate() -> void:
 	
 	_interpret_info()
 
-func _interpret_info():
+func choose_yes_or_no() -> bool:
+	var x = randi_range(0,1)
+	return x
+
+func _interpret_info() -> void:
 	print("---------------------------")
 	if synth.is_male:
 		print("Male")
@@ -91,7 +95,3 @@ func _interpret_info():
 	
 	print("Handwriting: " + str(synth.hand_writing))
 	print ("Profile Complete")
-
-func choose_yes_or_no() -> bool:
-	var x = randi_range(0,1)
-	return x
