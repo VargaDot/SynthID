@@ -2,7 +2,6 @@ extends Node
 
 class_name Synth
 
-var fingerprint:int
 var is_male:bool
 var voice_id:int
 var synth_name:String
