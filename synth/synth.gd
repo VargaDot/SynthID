@@ -5,7 +5,7 @@ class_name Synth
 var is_male:bool
 var voice_id:int
 var synth_name:String
-var dob:Time
+var birth_date:Dictionary
 var age:int
 var build:int
 var height:int

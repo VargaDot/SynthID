@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://xkjoxpbyniko"]
+[gd_scene load_steps=4 format=3 uid="uid://xkjoxpbyniko"]
 
 [ext_resource type="Script" path="res://synthesizer/synthesizer.gd" id="1_jkuuf"]
 [ext_resource type="PackedScene" uid="uid://cwjkm58rbtqwi" path="res://synth/synth.tscn" id="2_deocf"]
+[ext_resource type="Script" path="res://DateGenerator.cs" id="3_mcgpp"]
 
 [node name="Synthesizer" type="Node"]
 script = ExtResource("1_jkuuf")
 synth_blueprint = ExtResource("2_deocf")
+
+[node name="DateGenerator" type="Node" parent="."]
+script = ExtResource("3_mcgpp")
+MinYearRange = 18
+MaxYearRange = 65

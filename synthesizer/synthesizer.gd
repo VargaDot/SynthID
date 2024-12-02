@@ -1,6 +1,7 @@
 extends Node
 
 @export var synth_blueprint:PackedScene
+var date_gen:Node
 var synth:Node
 var cabinet:Array[Synth]
 var name_list
@@ -8,6 +9,8 @@ var name_list
 func _ready() -> void:
 	var name_file = FileAccess.open("res://name_list/name_list.json", FileAccess.READ)
 	name_list = JSON.parse_string(name_file.get_as_text())
+	
+	date_gen = $DateGenerator
 
 func _generate() -> void:
 	synth = synth_blueprint.instantiate()
@@ -17,6 +20,8 @@ func _generate() -> void:
 	if synth.is_male: synth.facial_hair = choose_yes_or_no()
 	synth.has_long_hair = choose_yes_or_no()
 	synth.synth_name = _create_synth_name()
+	synth.birth_date = date_gen.GenerateRandomDate()
+	synth.age = _calculate_synth_age()
 	
 	synth.voice_id = randi_range(0,99)
 	synth.eyes = randi_range(0,5)
@@ -48,6 +53,14 @@ func _create_synth_name() -> String:
 	synth_name = first_name + " " + last_name
 	return synth_name
 
+func _calculate_synth_age() -> int:
+	var age:int
+	
+	var currentTime:Dictionary = Time.get_datetime_dict_from_system()
+	#match currentTime
+	
+	return age
+
 func _interpret_info() -> void:
 	print("---------------------------")
 	print("Name: " + synth.synth_name)
@@ -58,6 +71,11 @@ func _interpret_info() -> void:
 			print("Has facial hair")
 	else:
 		print("Female")
+	
+	print("Date of birth: " + synth.birth_date)
+	
+	print("Age: " + str(synth.age))
+	
 	if synth.glasses:
 		print("Has Glasses")
 	
