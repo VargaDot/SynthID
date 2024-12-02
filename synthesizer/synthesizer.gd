@@ -72,7 +72,12 @@ func _interpret_info() -> void:
 	else:
 		print("Female")
 	
-	print("Date of birth: " + synth.birth_date)
+	print(
+		"Date of birth: "
+		+ str(synth.birth_date.day) + "/"
+		+ str(synth.birth_date.month) + "/"
+		+ str(synth.birth_date.year)
+	)
 	
 	print("Age: " + str(synth.age))
 	
