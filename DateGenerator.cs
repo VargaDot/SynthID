@@ -6,7 +6,7 @@ public partial class DateGenerator : Node
 {
     [Export] public int MinYearRange;
     [Export] public int MaxYearRange;
-
+    
     private DateTime MinYear, MaxYear;
     public override void _Ready()
     {
@@ -19,10 +19,12 @@ public partial class DateGenerator : Node
 
     public Dictionary GenerateRandomDate()
     {
-        int year, month, day;
+        int year, month, day, daysInMonth;
+        
         year = GD.RandRange(MinYear.Year, MaxYear.Year);
-        month = GD.RandRange(MinYear.Month, MaxYear.Month);
-        day = GD.RandRange(MinYear.Day, MaxYear.Day);
+        month = GD.RandRange(1, 12);
+        daysInMonth = DateTime.DaysInMonth(year, month);
+        day = GD.RandRange(1, daysInMonth);
 
         Dictionary newDate = new Dictionary() {
             {"year", year},
