@@ -57,7 +57,7 @@ func _calculate_synth_age() -> int:
 	var age:int
 	
 	var currentTime:Dictionary = Time.get_datetime_dict_from_system()
-	#match currentTime
+	age = currentTime.year - synth.birth_date.year
 	
 	return age
 
