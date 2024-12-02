@@ -13,8 +13,8 @@ public partial class DateGenerator : Node
         MinYear = DateTime.Today;
         MaxYear = DateTime.Today;
         
-        MinYear.AddYears(-MinYearRange);
-        MaxYear.AddYears(-MaxYearRange);
+        MinYear = MinYear.AddYears(-MinYearRange);
+        MaxYear = MaxYear.AddYears(-MaxYearRange);
     }
 
     public Dictionary GenerateRandomDate()
